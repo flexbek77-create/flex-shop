@@ -232,7 +232,7 @@ function cl(){clearInterval(tmr);$('#ov').classList.remove('on')}
 /* UC art: paste direct image URLs into IMG to use real photos; vector art is the fallback */
 const HERO_POS='center 30%';
 const EXT = { png: '.webp', jpg: '.jpg', jpeg: '.jpg' };
-const IMG={hero:['jpg','png','webp','jpeg'].map(e=>'img/hero.'+e),uc:[60,325,660,1800,3850,8100].map(n=>EXT.map(e=>'img/uc-'+n+'.'+e))};
+const IMG={hero:['jpg','png','webp','jpeg'].map(e=>'hero.'+e),uc:[60,325,660,1800,3850,8100].map(n=>EXT.map(e=>'uc-'+n+'.'+e))};
 function nxt(el){const i=+el.dataset.i,k=+el.dataset.k+1,c=IMG.uc[i];if(k<c.length){el.dataset.k=k;el.src=c[k]}else el.outerHTML=art(i,el.dataset.c)}
 const cn=(x,y,r)=>`<ellipse cx="${x}" cy="${y}" rx="14" ry="5.5" fill="#2a6b4e"/><ellipse cx="${x}" cy="${y-3.5}" rx="14" ry="5.5" fill="url(#uc)" stroke="${r}" stroke-width="1.2"/>`;
 const stk=(x,n,r='#bff0d6',b=52)=>Array.from({length:n},(_,k)=>cn(x,b-k*3.5,r)).join('');
